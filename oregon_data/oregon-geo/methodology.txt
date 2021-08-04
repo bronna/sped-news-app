@@ -1,0 +1,16 @@
+Methodology:
+
+1. Downloaded Oregon school district Tiger/Line Shapefiles of school districts
+    2018 to match the data
+    Modified directory names: tl_2018_41-unsd => oregon_2018_41_unified_sd
+        41 is the code for the state of Oregon
+    From US Census website: https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2018&layergroup=School+Districts
+    Downloaded Unified SDs, Elementary SDs, and Secondary SDs
+2. Downloaded School address data from Oregon Department of Education website: https://www.ode.state.or.us/instID/
+    Downloaded a 'daily' extract of all institutions in a zipped Microsoft Excel 8.0 file
+    Converted the file from xls to csv on cloudconvert.com
+    Decided to just focus on agencies labeled as "EI/ECSE" and "EI/ECSE Service Center" and pasted into new csv
+3. Used geocod.io to geocode the agency addresses
+4. Uploaded SD shape files and EI agency data to QGIS
+5. Exported SD layer data from QGIS as csv so I can match the SD names with the sped data in pandas
+6. Matched the SD names in pandas - exported to new data attributes table to upload to QGIS and add as layer

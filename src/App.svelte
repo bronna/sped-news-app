@@ -6,42 +6,22 @@
 	let selectedDistrict;
 	let el;
 	const data = [30, 86, 168, 281, 303, 365]
-	//const data = d3.json("./sped.json")
 
 	const height = 100
 	const width = 500
 
 	onMount(() => {
-		// let xScale = d3.scaleLinear()
-		// 	.domain([bins[0].x0, bins[bins.length - 1].x1])
-		// 	.range([0, width])
-
-		// let yScale = d3.scaleLinear()
-		// 	.domain([0, d3.max(bins, d => d.length)])
-		// 	.range([height, 0])
-
-		// let bins = d3.bin().thresholds(20)(data)
-		// console.log(bins)
-
 		d3.select(el)
-			.selectAll("rect")
+			.selectAll("div")
 			.data(data)
-			.join("rect")
-				.attr("x", d => d['eighty'])
-				.attr("y", 0)
-				.attr("width", 20)
-				.attr("height", 50)
-				.attr("fill", "lightblue")
-			// .selectAll("div")
-			// .data(data)
-			// .enter()
-			// .append("div")
-			// .style("width", function(d) {
-			// 	return d + "px";
-			// })
-			// .text(function(d) {
-			// 	return d;
-			// });
+			.enter()
+			.append("div")
+			.style("width", function(d) {
+				return d + "px";
+			})
+			.text(function(d) {
+				return d;
+			});
 	});
 	
 </script>
